@@ -15,9 +15,6 @@ See live deployed app at
 
 This application is specific to anyone that wants to view and post items to a MongoDB database via API.
 
-## THE FOLLOWING CONTENT IS UNDER CONTSTRUCTION
-## --------------------------------------------
-
 ## Instructions for GitHub developer use
 1. Ensure you have downloaded and installed node.js and have rebooted your system (if Windows)
 2. Clone repository to your system.
