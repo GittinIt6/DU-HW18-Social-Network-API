@@ -21,10 +21,9 @@ This application is specific to anyone that wants to view and post items to a Mo
 ## Instructions for GitHub developer use
 1. Ensure you have downloaded and installed node.js and have rebooted your system (if Windows)
 2. Clone repository to your system.
-3. From a terminal, ensure you are in the server.js directory
+3. From a terminal, ensure you are in the index.js directory
 4. Update the /config/connection.js to include your database connection info as well as your envrionment variables (.env).
-5. Within a mysql CLI, run the ./db/schema.sql
-6. Run:
+5. Run:
 ~~~
 npm i
 npm run seed
@@ -33,10 +32,7 @@ npm start
 
 ## Audience
 
-The intended audience is an individual that would like to use a Tech Blog.
-
-&#x2612; **USER** Technical Knowledge:
-The user of this site does **_not_** need to have a technical background.
+The intended audience is an individual that would like to use a Social Network API.
 
 &#x2611; **Developer** Technical Knowledge:
 A developer editing this code does need to have a technical background, and *should* understand node.js, express, and MYSQL capabilities.
@@ -54,7 +50,7 @@ A developer editing this code does need to have a technical background, and *sho
 
 ## Technical Detail
 
-This application uses node.js with **sequelize**, **dotenv**, and **express**.
+This application uses node.js with **mongoose**, **dotenv**, and **express**.
 
 The files are configured as follows:
 ```
@@ -107,15 +103,11 @@ Root Directory/
 ```
 >**node.js**: This site uses node.js <https://nodejs.org/>
 
->**sequelize**: This site uses sequelize <https://sequelize.org/>
+>**mongoose**: This site uses mongoose <https://mongoosejs.com/>
 
 >**dotenv**: This site uses dotenv <https://www.npmjs.com/package/dotenv>
 
 >**express**: This site uses express <https://expressjs.com/>
-
-### SQL Schema:
-
-![screenshot](./git-files/schema.PNG)
 
 ### Screenshot:
 

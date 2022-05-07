@@ -19,7 +19,8 @@ const reactionSchema = new Schema(
       type: Date,
       default: Date.now,
       get: (date) => {
-          return date.toISOString().split("T") [0];
+          // return date.toISOString().split("T") [0];
+          return date.toLocaleString();
       }
     },
   },

@@ -35,7 +35,7 @@ connection.once('open', async () => {
 
     await Thought.collection.insertOne({
         thoughtText: 'Default thought',
-        users: users,
+        userName: users[0].userName,
     });
 
     // Log out the seed data to indicate what should appear in the database

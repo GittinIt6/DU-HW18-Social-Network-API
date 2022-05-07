@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 
-//User model
+//Thought model
 const thoughtSchema = new Schema(
   {
     thoughtText: {
@@ -15,6 +15,22 @@ const thoughtSchema = new Schema(
       required: true,
       max_length: 32,
     },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: (date) => {
+          // return date.toISOString().split("T") [0];
+          return date.toLocaleString();
+      }
+    },
+    updatedAt: {
+      type: Date,
+      default: Date.now,
+      get: (date) => {
+          // return date.toISOString().split("T") [0];
+          return date.toLocaleString();
+      }
+    },
     reactions: [reactionSchema],
   },
   {
@@ -26,7 +42,7 @@ const thoughtSchema = new Schema(
   }
 );
 
-reactionSchema.virtual('reactionCount').get(function () {
+thoughtSchema.virtual('reactionCount').get(function () {
     return this.reactions.length;
   });
 
