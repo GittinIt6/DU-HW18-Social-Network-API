@@ -35,15 +35,17 @@ The intended audience is an individual that would like to use a Social Network A
 A developer editing this code does need to have a technical background, and *should* understand node.js, express, and MYSQL capabilities.
 
 ## API
-| Path                   | Method | Action            | Requires                   |
-|------------------------|--------|-------------------|----------------------------|
-| /api/users             | POST   | create user       | req.body                   |
-| /api/users/login       | POST   | login user        | req.body.username,pwd      |
-| /api/users/logout      | POST   | logout user       | req.session.id             |
-| /api/posts             | POST   | create new post   | title, content, user_id    |
-| /api/posts/:id         | DEL    | delete a product  | post :id                   |
-| /api/comments          | POST   | create new post   | comment, post_id, user_id  |
-| /api/comments/:id      | DEL    | delete a post     | post :id                   |
+| Path                       | Method | Action             | Requires               |
+|----------------------------|--------|--------------------|------------------------|
+| /api/users                 | GET    | return users       |                        |
+| /api/thoughts              | GET    | return thoughts    |                        |
+| /api/users/:id             | GET    | return user        | _id of user            |
+| /api/thoghts/:id           | GET    | return thought     | _id of thought         |
+| /api/users/:id             | DEL    | delete a user      | _id of user            |
+| /api/users/:id             | PUT    | update a user      | _id of user            |
+| /api/users                 | POST   | create new user    | JSON - username, email |
+| /api/users/:id/friends/:id | POST   | add friend to user | user _id, friend _id   |
+| /api/users/:id/friends/:id | DEL    | delete a post      | user _id, friend _id   |
 
 ## Technical Detail
 
@@ -53,49 +55,24 @@ The files are configured as follows:
 ```
 Root Directory/
 |
-│ --server.js
+│ --index.js
 │ --package.json
 │ --.gitignore
 │ --readme.md
+│ --.envExample (to be updated by developer)
 │ --.env (to be created locally)
 |
 └───config/ (folder)
-|     --connection.js
 |
 └───controllers/ (folder)
-|   | --index.js
-|   | --homeRoutes
-|   └──api (folder)
-|      | --index.js
-|      | --commentRoutes.js
-|      | --postRoutes.js
-|        --userRoutes.js
 |
 └───db/ (folder)
-|   --schema.sql
 |
 └───models/ (folder)
-|   | --Comment.js
-|   | --index.js
-|   | --Post.js
-|     --User.js
 |
-└───public/ (folder)
-|   |
-|   └──css (folder)
-|   |   --style.css
-|   |
-|   └──js (folder)
-|   |   --login.js
-|   |   --logout.js
-|   |   --newcomment.js
-|       --newpost.js
-|
-└───seeds (folder)
-    | --seed.js
-    | --userData.json
-    | --postData.json
-      --commentData.json
+└───routes/ (folder)
+   |
+   └──api (folder)
 
 ```
 >**node.js**: This site uses node.js <https://nodejs.org/>
@@ -112,4 +89,4 @@ Root Directory/
 
 ## Revision History 
 
-1. This application was created in April 2022 as part of a bootcamp assignment. It was created from scratch with requirements provided by the instructor.
+1. This application was created in May 2022 as part of a bootcamp assignment. It was created from scratch with requirements provided by the instructor.
